@@ -159,8 +159,12 @@ function numero_primo (numero){
 function saludar (saludo, name){
     alert(saludo + " " + name);
 }
-saludar(Hola, Erik);
+saludar("Hola", "Erik");
 
+function perimetro (figura, lados){
+    return(String(figura) + " " + "su perimetro es " + lados * lados * lados);
+}
 
+let resultado = console.log(perimetro("cuadrado", 2))
 
 
