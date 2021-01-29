@@ -156,7 +156,7 @@ function numero_primo (numero){
 
 // sesion 3
 
-function saludar (saludo, name){
+/* function saludar (saludo, name){
     alert(saludo + " " + name);
 }
 saludar("Hola", "Erik");
@@ -165,6 +165,29 @@ function perimetro (figura, lados){
     return(String(figura) + " " + "su perimetro es " + lados * lados * lados);
 }
 
-let resultado = console.log(perimetro("cuadrado", 2))
+let resultado = console.log(perimetro("cuadrado", 2)) */
+
+let cuadrado = {lados: "4"};
+let tringulo = {lados: "3"};
+let circulo = {lados: "2"}
+
+let seleccion = prompt("figura");
+
+if (seleccion === "cuadrado"){
+    let peri = cuadrado.lados*2;
+    console.log(peri);
+    
+} else if (seleccion === "triangulo"){
+    let peri = tringulo.lados * 3;
+    console.log(peri);
+    
+} else {
+    let peri = circulo.lados * 3.1416;
+    console.log(peri);
+}
+
+
+
+
 
 
