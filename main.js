@@ -167,24 +167,31 @@ function perimetro (figura, lados){
 
 let resultado = console.log(perimetro("cuadrado", 2)) */
 
-let cuadrado = {lados: "4"};
-let tringulo = {lados: "3"};
-let circulo = {lados: "2"}
+let cuadrado = {lados: 4};
+let tringulo = {lados: 3};
+let circulo = {lados: 2}
 
 let seleccion = prompt("figura");
 
 if (seleccion === "cuadrado"){
-    let peri = cuadrado.lados*2;
-    console.log(peri);
-    
+    function peri_cuadrado (lado_cuadrado){
+        return lado_cuadrado * cuadrado.lados;
+    }
 } else if (seleccion === "triangulo"){
-    let peri = tringulo.lados * 3;
-    console.log(peri);
-    
+    function peri_triangulo(lado_triangulo) {
+        return lado_triangulo * tringulo.lados;
+    }
 } else {
-    let peri = circulo.lados * 3.1416;
-    console.log(peri);
+    function peri_circulo(lado_circulo) {
+        const pi = 3.1416;
+        return lado_circulo *  pi * circulo.lados;
+    }
 }
+
+console.log(peri_cuadrado(12));
+
+
+
 
 
 
