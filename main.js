@@ -43,7 +43,7 @@ if (edad >= edad_minima && ciudad === "CDMX") {
  }
  */
 
-let lista = ["yo", "tu", 3, 5, null, 7];
+/* let lista = ["yo", "tu", 3, 5, null, 7];
 
 const pedido = Number(prompt("Indice"));
 
@@ -51,4 +51,51 @@ if (pedido > lista.length){
     console.log("Ese elemento no esta en la lista");
 }else{
     console.log("el elemento en el indice " + pedido + " es " + lista[pedido]);
+} */
+let lista = [];
+
+const requirimiento = Number(prompt("Elige 1 para añadir, Elige 2 para borrar, Elige tres para consultar"))
+
+function añadir(registro){
+    if (requirimiento=== 1){
+        let decision = String(prompt("al inicio o final"));
+        if (decision === "inicio"){
+            registro = console.log(prompt("Añade valor"));
+            lista.unshift(registro);
+        } else{
+            lista.push(registro);
+        }
+    } else if (requirimiento === 2){
+            let aborrar = String(prompt("Ingrese el valor a eliminar"));
+            let existe = lista.includes(aborrar);
+            if (existe === true){
+               let indice = lista.indexOf(aborrar);
+               lista.splice(indice,1);
+            } else{
+                console.log("No existe ese valor en la lista");
+            }
+    } else{
+        console.log(lista);
+    }
 }
+
+añadir();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
