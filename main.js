@@ -43,3 +43,12 @@ if (edad >= edad_minima && ciudad === "CDMX") {
  }
  */
 
+let lista = ["yo", "tu", 3, 5, null, 7];
+
+const pedido = Number(prompt("Indice"));
+
+if (pedido > lista.length){
+    console.log("Ese elemento no esta en la lista");
+}else{
+    console.log("el elemento en el indice " + pedido + " es " + lista[pedido]);
+}
