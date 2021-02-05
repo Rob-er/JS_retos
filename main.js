@@ -52,7 +52,7 @@ if (pedido > lista.length){
 }else{
     console.log("el elemento en el indice " + pedido + " es " + lista[pedido]);
 } */
-const lista = ["Hola", "2", "3", "jota", "joto"];
+/* const lista = ["Hola", "2", "3", "jota", "joto"];
 
 const requirimiento = Number(prompt("Elige 1 para añadir, Elige 2 para borrar, Elige tres para consultar"))
 
@@ -80,8 +80,24 @@ function añadir(registro){
     return console.log(lista);
 }
 
-añadir();
+añadir(); */
 
+
+// ejercicio 2
+
+/* const contactos = {nombre:"", apellidos:"", telefono:"", domicilio:"", telcasa:"", email:""};
+
+const menu = Number(prompt("Ingrese 1 para añadir, 2 para buscar, 3 para eliminar contacto y 4 para modificar")); */
+
+/* function agregar (nm, apll, tel, dom, telc, mail){
+   let variables = [nm, apll, tel, dom, telc, mail];
+   let con = ["nombre","apellidos", "telefono", "domicilio", "telcasa", "email"]
+   variables.forEach(element, val => {
+       element= String(prompt("indique el " + element))
+       contactos.val=element;
+   });
+}
+agregar (); */
 
 
 
