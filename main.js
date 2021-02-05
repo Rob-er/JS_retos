@@ -99,6 +99,42 @@ const menu = Number(prompt("Ingrese 1 para añadir, 2 para buscar, 3 para elimin
 }
 agregar (); */
 
+let persona = function(nombre, apellidos, telefono, domicilio, telcasa, email){
+    this.nombre = nombre;
+    this.apellidos = apellidos;
+    this.telcasa = telefono;
+    this.domicilio = domicilio;
+    this.telcasa = telcasa;
+    this.email = email;
+    this.imprimir = () => {};
+} 
+
+let parametros = {nombre, apellidos, telefono, domicilio, telcasa, email};
+
+const menu = Number(prompt("Ingrese 1 para añadir, 2 para buscar, 3 para eliminar contacto y 4 para modificar"));
+
+function agregar (Nombre){
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
