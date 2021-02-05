@@ -52,24 +52,24 @@ if (pedido > lista.length){
 }else{
     console.log("el elemento en el indice " + pedido + " es " + lista[pedido]);
 } */
-let lista = [];
+const lista = ["Hola", "2", "3", "jota", "joto"];
 
 const requirimiento = Number(prompt("Elige 1 para añadir, Elige 2 para borrar, Elige tres para consultar"))
 
 function añadir(registro){
     if (requirimiento=== 1){
         let decision = String(prompt("al inicio o final"));
+        registro = String(prompt("Añade valor"));
         if (decision === "inicio"){
-            registro = console.log(prompt("Añade valor"));
             lista.unshift(registro);
         } else{
-            lista.push(registro);
+           lista.push(registro);
         }
     } else if (requirimiento === 2){
-            let aborrar = String(prompt("Ingrese el valor a eliminar"));
-            let existe = lista.includes(aborrar);
+            registro = prompt("Ingrese el valor a eliminar");
+            let existe = lista.includes(registro);
             if (existe === true){
-               let indice = lista.indexOf(aborrar);
+               let indice = lista.indexOf(registro);
                lista.splice(indice,1);
             } else{
                 console.log("No existe ese valor en la lista");
@@ -77,9 +77,12 @@ function añadir(registro){
     } else{
         console.log(lista);
     }
+    return console.log(lista);
 }
 
 añadir();
+
+
 
 
 
