@@ -83,79 +83,28 @@ function añadir(registro){
 añadir(); */
 
 
-// ejercicio 2
-
-/* const contactos = {nombre:"", apellidos:"", telefono:"", domicilio:"", telcasa:"", email:""};
-
-const menu = Number(prompt("Ingrese 1 para añadir, 2 para buscar, 3 para eliminar contacto y 4 para modificar")); */
-
-/* function agregar (nm, apll, tel, dom, telc, mail){
-   let variables = [nm, apll, tel, dom, telc, mail];
-   let con = ["nombre","apellidos", "telefono", "domicilio", "telcasa", "email"]
-   variables.forEach(element, val => {
-       element= String(prompt("indique el " + element))
-       contactos.val=element;
-   });
-}
-agregar (); */
-
-/* let persona = function(nombre, apellidos, telefono, domicilio, telcasa, email){
-    this.nombre = nombre;
-    this.apellidos = apellidos;
-    this.telcasa = telefono;
-    this.domicilio = domicilio;
-    this.telcasa = telcasa;
-    this.email = email;
-    this.imprimir = () => {};
-} 
-
-let parametros = {nombre, apellidos, telefono, domicilio, telcasa, email};
-
-const menu = Number(prompt("Ingrese 1 para añadir, 2 para buscar, 3 para eliminar contacto y 4 para modificar"));
-
-function agregar (Nombre){
-    for (let i = 0, i = 5, i++){
-        let nombre = String(prompt("nombre"));
-        let apellidos = String(prompt("nombre"));
-        let telefono = String(prompt("nombre"));
-        let domicilio = String(prompt("nombre"));
-        let telcasa = String(prompt("nombre"));
-        let email = String(prompt("nombre"));
-
-    }
-    Nombre = new persona(console.log(""), console.log())
-} */
-
-
-
-/* let agenda = function(nombre, edad, genero, telefono){
-    this.nombre = nombre;
-    this.edad =edad;
-    this.genero = genero;
-    this.telefono = telefono;
-    this.imprimir = () => {console.log(this.nombre + this.edad + this.genero + this.genero)};
-}
-
-let lista= [];
-
-let consulta = Number(prompt("indice"));
-
-function agregar(){
-    let contacto = new agenda("jo", 66, "m", "777777");
-    lista.push(contacto);
-    console.log(lista);
-}
-contacto.imprimir() */
-
+// creo una clase para persona 
 class persona{
     constructor(nombre, apellido){
         this.nombre= nombre;
         this.apellido = apellido;
     }
 }
+// creo una clase para lista con los metodos que habia mencionado que no agregara en alumno
+class lista{
+    constructor(){
+        this.lista= [];
+    }
+    agregar(nuevo){
+        this.lista.push(nuevo);
+    }
 
-let lista= [];
+    imprimmir (){
+        console.log(this.lista);
+    }
+}
 
+// creo una clase para alumno 
 class alumno extends persona{
     constructor(nombre, apellido, grado, grupo){
     super(nombre, apellido);
@@ -164,13 +113,26 @@ class alumno extends persona{
     }
 }
 
+/* aqui batallé mucho para que funcionara la otro porque existia en el scope del Do
+ pero no en el While, por lo tanto cree la variavle global vacia para depsues modificarla dentro del Do */
 
-const menu = String(prompt("Desea agregar alumnos?"));
+let otro= "";
+let list = new lista ();
 
-if (menu=== "Si"){
-    let nuevo = new alumno (String(prompt("Nombre")), String(prompt("Apellido")), Number(prompt("grado")), String(prompt("grupo")));
-    lista.push(nuevo);
-    console.log(lista);
+do {
+    let nm = String(prompt("Nombre"));
+    let apll = String(prompt("Apellido"));
+    let gdo = Number(prompt("Grado"));
+    let gpo = String(prompt("Grupo"));
+
+    let nuevo = new alumno(nm, apll, gdo, gpo);
+
+    list.agregar(nuevo);
+
+    otro = String(prompt("Otro alumno?"));
+
+}while (otro === "Si") {
+    list.imprimmir();    
 }
 
 
