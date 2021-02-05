@@ -148,10 +148,9 @@ function agregar(){
 contacto.imprimir() */
 
 class persona{
-    constructor(nombre, apellido, genero){
+    constructor(nombre, apellido){
         this.nombre= nombre;
         this.apellido = apellido;
-        this.genero = genero;
     }
 }
 
@@ -162,21 +161,16 @@ class alumno extends persona{
     super(nombre, apellido);
         this.grado= grado;
         this.grupo= grupo;
-        this.registro = () => {
-            lista.push(this.nombre + " " + this.apellido + " " + this.grado + " " + this.grupo)
-        }
-        this.imprimir= () => {
-            console.log(lista);
-        }
     }
 }
+
 
 const menu = String(prompt("Desea agregar alumnos?"));
 
 if (menu=== "Si"){
     let nuevo = new alumno (String(prompt("Nombre")), String(prompt("Apellido")), Number(prompt("grado")), String(prompt("grupo")));
-    nuevo.registro();
-    nuevo.imprimir();
+    lista.push(nuevo);
+    console.log(lista);
 }
 
 
