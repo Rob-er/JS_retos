@@ -112,15 +112,48 @@ registro.agregar(nuevo4);
 
 console.log(Object.values(registro.lista.filter(x => x.nombre === "erik"))); */
 
-let prop = String(Object.keys(registro.lista.filter(x => x.nombre === "erik")));
-let resultado = console.log(prop);
+
+/* let nm = prompt("Nombre");
+let prop = String(Object.keys(registro.lista.filter(x => x.nombre === nm)));
+if (prop.length > 1){
+    console.log(prop);
+    let pregunta = Number(prompt("Indique cual"));
+    let valor = String(Object.values(registro.lista[pregunta]));
+    console.log(valor);
+} else{
+    
+} */
+let nm =prompt("nombre");
+let prop = Object.values(registro.lista.filter(x => x.nombre === nm));
+
+if (prop.length-1 > 0){
+    let cual = Number(prompt("cual desea ver ?" + " hay " + prop.length));
+    let resp = prop[cual-1];    
+    console.table(resp);
+} else{
+    console.table(prop);
+}
+
+
+
+
+ 
+
+
+/* console.table(prop);
+console.table(resp); */
+
+ 
+
+ 
+
+/* let resultado = console.log(prop);
 let pregunta = Number(prompt("Indique cual"));
 
 let nombre = String(Object.values(registro.lista[pregunta]));
 
 console.log(nombre);
- 
-
+  */
 
 
 
