@@ -22,57 +22,25 @@ class agenda {
         this.lista.push(nuevo);
     }
 
-    buscar (contacto, list){
-        let buscado = list.filter(function(registro){
-            console.log(registro=== contacto);
-        })
+    buscar (registro){
+        let nm =prompt("nombre");
+        let prop = Object.values(registro.lista.filter(x => x.nombre === nm));
+        
+        if (prop.length-1 > 0){
+            let cual = Number(prompt("cual desea ver ?" + " hay " + prop.length + " registros con ese nombre"));
+            let resp = prop[cual-1];    
+            console.table(resp);
+        } else{
+            console.table(prop);
+        }
     }
 }
 
-
-// let menu = String(prompt("Que hacer 1 agregar 2 buscar"));
+let menu = String(prompt("Que hacer 1 agregar 2 buscar"));
 let registro = new agenda();
 let respuesta ="";
 
-/* switch(menu !== ""){
-    case (menu == "agregar" || respuesta=== "si"):
-    let nm = String(prompt("Nombre"));
-    let apll= String(prompt("Apellidos"));
-    let dom = String(prompt("Domicilio"));
-    let tel= Number(prompt("Telefono"));
-    let telca = Number(prompt("Telefono casa"));
-    let mail= String(prompt("Email"));
-
-    let nuevo = new contacto(nm, apll, dom, tel, telca, mail);
-
-    registro.agregar(nuevo);
-    nuevo.soy()
-    respuesta = String(prompt("Desea agregar más registros si o no?"));
-    break;
-    case (menu === "buscar"):
-        let cual = String(prompt("Ingrese nombre buscado"));
-        registro.buscar(cual, registro);
-        break;
-    default:
-        console.log("No ingresaste ninguna opcion valida");
-        break;
-} */
-
-// Metodo bsucar con array
-
-/* buscar (contacto, list){
-
-    if (list.indexOf(contacto) === -1){
-        console.log("No existe este contacto");
-    } else{ 
-        let destino = list.filter(valor => valor === contacto);
-
-        let pregunta = String(prompt("Hay un total de " + destino.length + " seleccione uno"));
-        console.log(destino[pregunta-1]);
-    }
-} */
-
-/* do {
+do {
     if (menu === "agregar"){
         let nm = String(prompt("Nombre"));
         let apll= String(prompt("Apellidos"));
@@ -92,13 +60,11 @@ let respuesta ="";
 }
 
  if(menu=== "buscar"){
-    let cual = String(prompt("Ingrese nombre buscado"));
-    registro.buscar(cual, registro);
-} */
+   registro.buscar(registro);
+}
 
-
-
-let nuevo = new contacto("juan", "j", "55555", "jjj", 6666, "hdhdh@");
+// instancias de ejemplo
+/* let nuevo = new contacto("juan", "j", "55555", "jjj", 6666, "hdhdh@");
 let nuevo2 = new contacto("juan", "t", "55555", "jjj", 6666, "hdhdh@");
 let nuevo3= new contacto("juan", "k", "55555", "jjj", 6666, "hdhdh@");
 let nuevo4 = new contacto("erik", "o", "55555", "jjj", 6666, "hdhdh@");
@@ -106,54 +72,35 @@ let nuevo4 = new contacto("erik", "o", "55555", "jjj", 6666, "hdhdh@");
 registro.agregar(nuevo);
 registro.agregar(nuevo2);
 registro.agregar(nuevo3);
-registro.agregar(nuevo4);
+registro.agregar(nuevo4); */
 
-/* console.table(Object.values(registro.lista.filter(x => x.nombre === "juan")));
-
-console.log(Object.values(registro.lista.filter(x => x.nombre === "erik"))); */
-
-
-/* let nm = prompt("Nombre");
-let prop = String(Object.keys(registro.lista.filter(x => x.nombre === nm)));
-if (prop.length > 1){
-    console.log(prop);
-    let pregunta = Number(prompt("Indique cual"));
-    let valor = String(Object.values(registro.lista[pregunta]));
-    console.log(valor);
-} else{
-    
-} */
-let nm =prompt("nombre");
+// Metodo de busqueda por nombre exitosa
+/* let nm =prompt("nombre");
 let prop = Object.values(registro.lista.filter(x => x.nombre === nm));
 
 if (prop.length-1 > 0){
-    let cual = Number(prompt("cual desea ver ?" + " hay " + prop.length));
+    let cual = Number(prompt("cual desea ver ?" + " hay " + prop.length + " registros con ese nombre"));
     let resp = prop[cual-1];    
     console.table(resp);
 } else{
     console.table(prop);
-}
+} */
 
 
 
+// Metodo buscar con array
 
- 
+/* buscar (contacto, list){
 
+    if (list.indexOf(contacto) === -1){
+        console.log("No existe este contacto");
+    } else{ 
+        let destino = list.filter(valor => valor === contacto);
 
-/* console.table(prop);
-console.table(resp); */
-
- 
-
- 
-
-/* let resultado = console.log(prop);
-let pregunta = Number(prompt("Indique cual"));
-
-let nombre = String(Object.values(registro.lista[pregunta]));
-
-console.log(nombre);
-  */
+        let pregunta = String(prompt("Hay un total de " + destino.length + " seleccione uno"));
+        console.log(destino[pregunta-1]);
+    }
+} */
 
 
 
