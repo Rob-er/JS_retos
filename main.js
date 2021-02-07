@@ -108,10 +108,20 @@ registro.agregar(nuevo2);
 registro.agregar(nuevo3);
 registro.agregar(nuevo4);
 
-console.table(Object.values(registro.lista.filter(x => x.nombre === "erik")));
+/* console.table(Object.values(registro.lista.filter(x => x.nombre === "juan")));
 
+console.log(Object.values(registro.lista.filter(x => x.nombre === "erik"))); */
 
+let prop = String(Object.keys(registro.lista.filter(x => x.nombre === "erik")));
+let resultado = console.log(prop);
+let pregunta = Number(prompt("Indique cual"));
 
+let nombre = String(Object.values(registro.lista[pregunta]));
 
+console.log(nombre);
  
+
+
+
+
 
