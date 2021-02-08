@@ -34,9 +34,34 @@ class agenda {
             console.table(prop);
         }
     }
+
+    eliminar (registro){
+        let nm =prompt("nombre");
+        let prop = Object.values(registro.lista.filter(x => x.nombre === nm));
+        if (prop.length-1 > 0){
+            console.table("inicio" + prop);
+            let cual = Number(prompt("cual desea eliminar ?" + " hay " + prop.length + " registros con ese nombre"));
+            let aviso = prompt(`Esta seguro que desea eliminar el registro ${cual} ?`);
+            if (aviso === "si"){
+            prop.splice((cual-1),1);
+            console.table("resultado" + prop);
+            } else{
+                nm = prompt("nombre");
+            }
+        } else{
+            let aviso = prompt(`Esta seguro que desea eliminar el registro de ${nm} ?`);
+            if (aviso === "si"){
+                prop.shift();
+                console.log("Se ha eliminado el registro exitosamente");
+                console.table(prop);
+            } else{
+                nm = prompt("nombre");
+            }
+        }
+    }
 }
 
-let menu = String(prompt("Que hacer 1 agregar 2 buscar"));
+let menu = String(prompt("Que desea hacer: agregar, buscar, eliminar"));
 let registro = new agenda();
 let respuesta ="";
 
@@ -61,6 +86,12 @@ do {
 
  if(menu=== "buscar"){
    registro.buscar(registro);
+}
+
+if(menu === "eliminar"){
+    registro.eliminar(registro);
+
+
 }
 
 // instancias de ejemplo
