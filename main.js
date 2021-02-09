@@ -1,5 +1,5 @@
  // Ejercicio 2 
-class contacto {
+class Contacto {
     constructor(nombre, apellidos, telefono, domicilio, telcasa, email){
         this.nombre = nombre;
         this.apellidos= apellidos;
@@ -13,7 +13,7 @@ class contacto {
     }
 }
 
-class agenda {
+class Agenda {
     constructor(){
         this.lista= [];
     }
@@ -52,9 +52,8 @@ class agenda {
         } else{
             let aviso = prompt(`Esta seguro que desea eliminar el registro de ${nm} ?`);
             if (aviso === "si"){
-                prop.shift();
                 console.log("Se ha eliminado el registro exitosamente");
-                console.table(prop);
+                console.table(prop.pop());
             } else{
                 nm = prompt("nombre");
             }
@@ -68,14 +67,14 @@ class agenda {
             console.table(prop);
             let cual = Number(prompt(`Cual desea modificar?  hay ${prop.length} registro scpn ese nombre`));   
 
-            let nm = (prompt("Nombre"));
-            let apll = (prompt("Apellidos"));
-            let dom = (prompt("Domicilio"));
+            let nm = prompt("Nombre");
+            let apll = prompt("Apellidos");
+            let dom = prompt("Domicilio");
             let tel = Number(prompt("Telefono"));
             let telca = Number(prompt("Telefono casa"));
-            let mail = (prompt("Email"));
+            let mail = prompt("Email");
 
-            let nuevo = new contacto(nm, apll, dom, tel, telca, mail);
+            let nuevo = new Contacto(nm, apll, dom, tel, telca, mail);
             
             let aviso = prompt(`Esta seguro que desea modificar el registro ${cual} ?`);
             if (aviso === "si"){
@@ -93,7 +92,7 @@ class agenda {
             let telca = Number(prompt("Telefono casa"));
             let mail = (prompt("Email"));
 
-            let nuevo = new contacto(nm, apll, dom, tel, telca, mail);
+            let nuevo = new Contacto(nm, apll, dom, tel, telca, mail);
 
             let aviso = prompt(`Esta seguro que desea modificar el registro de ${nm} ?`);
             if (aviso === "si"){
@@ -107,83 +106,40 @@ class agenda {
     }
 }
 
-let menu = String(prompt("Que desea hacer: agregar, buscar, eliminar o Modificar"));
-let registro = new agenda();
+let menu = prompt("Que desea hacer: agregar(a), buscar(b), eliminar(e) o modificar(m)");
+let registro = new Agenda();
 let respuesta ="";
 
 do {
-    if (menu === "agregar"){
-        let nm = String(prompt("Nombre"));
-        let apll= String(prompt("Apellidos"));
-        let dom = String(prompt("Domicilio"));
+    if (menu === "a"){
+        let nm = prompt("Nombre");
+        let apll= prompt("Apellidos");
+        let dom = prompt("Domicilio");
         let tel= Number(prompt("Telefono"));
         let telca = Number(prompt("Telefono casa"));
-        let mail= String(prompt("Email"));
+        let mail= prompt("Email");
 
-        let nuevo = new contacto(nm, apll, dom, tel, telca, mail);
+        let nuevo = new Contacto(nm, apll, dom, tel, telca, mail);
 
         registro.agregar(nuevo);
         nuevo.soy()
-        respuesta = String(prompt("Desea agregar más registros si o no?"));
+        respuesta = prompt("Desea agregar más registros si o no?");
         }
 } while(respuesta=== "si"){
-    menu=String(prompt("Que hacer 1 agregar 2 buscar"));
+    menu = prompt("Que desea hacer: agregar(a), buscar(b), eliminar(e) o modificar(m)");
 }
 
- if(menu=== "buscar"){
+ if(menu=== "b"){
    registro.buscar(registro);
-} else if (menu === "modificar"){
+} else if (menu === "m"){
     registro.modificar(registro);
-} else if (menu=== "eliminar"){
+} else if (menu === "e"){
     registro.eliminar(registro);
 }
 
-/* if(menu === "eliminar"){
-    registro.eliminar(registro);
-} */
-
-
-// instancias de ejemplo
-/* let nuevo = new contacto("juan", "j", "55555", "jjj", 6666, "hdhdh@");
-let nuevo2 = new contacto("juan", "t", "55555", "jjj", 6666, "hdhdh@");
-let nuevo3= new contacto("juan", "k", "55555", "jjj", 6666, "hdhdh@");
-let nuevo4 = new contacto("erik", "o", "55555", "jjj", 6666, "hdhdh@");
-
-registro.agregar(nuevo);
-registro.agregar(nuevo2);
-registro.agregar(nuevo3);
-registro.agregar(nuevo4); */
-
-// Metodo de busqueda por nombre exitosa
-/* let nm =prompt("nombre");
-let prop = Object.values(registro.lista.filter(x => x.nombre === nm));
-
-if (prop.length-1 > 0){
-    let cual = Number(prompt("cual desea ver ?" + " hay " + prop.length + " registros con ese nombre"));
-    let resp = prop[cual-1];    
-    console.table(resp);
-} else{
-    console.table(prop);
-} */
-
-
-
-// Metodo buscar con array
-
-/* buscar (contacto, list){
-
-    if (list.indexOf(contacto) === -1){
-        console.log("No existe este contacto");
-    } else{ 
-        let destino = list.filter(valor => valor === contacto);
-
-        let pregunta = String(prompt("Hay un total de " + destino.length + " seleccione uno"));
-        console.log(destino[pregunta-1]);
-    }
-} */
-
-/* // Prueba For In y para modificar registros
-let registro= new agenda();
+ // Prueba For In y para modificar registros
+ // instancias de ejemplo
+/* let registro= new agenda();
 
 let nuevo = new contacto("juan", "j", "55555", "jjj", 6666, "hdhdh@");
 let nuevo2 = new contacto("juan", "t", "55555", "jjj", 6666, "hdhdh@");
@@ -199,9 +155,17 @@ let nm =prompt("nombre");
 let prop = Object.values(registro.lista.filter(x => x.nombre === nm));
     console.table(prop.length);
 let cual = Number(prompt(`Cual desea modificar?  hay ${prop.length} registro scpn ese nombre`));
-let varia= prop[cual-1];
-  for(let propiedad in varia){
+let varia= prop[cual-1]; */
+
+/* for(let propiedad in varia){
    let nu_re = prompt("Nuevos datos");
-   console.log(propiedad);
+   let {nombre} = varia;
+   varia.nombre = nu_re;
+   console.log(varia);
+}
+ */
+/* let tama = Object.keys(registro.lista.length);
+for(let i = 0; i <= tama; i++){
+    console.log(Object.keys(registro.lista[i]));
 }
  */
