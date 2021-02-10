@@ -43,3 +43,16 @@ if (edad >= edad_minima && ciudad === "CDMX") {
  }
  */
 
+ let numero = [3, 4, 6, 7, 8, 93, 4];
+ let numero2= [];
+
+function doble (lista){
+    let numero2 = [];
+    for (let i =0; i< lista.length; i++){
+        numero2.push(numero[i] *2);
+    }
+    return numero2;
+}
+
+console.log(doble(numero));
+
