@@ -43,7 +43,7 @@ if (edad >= edad_minima && ciudad === "CDMX") {
  }
  */
 
- let numero = [3, 4, 6, 7, 8, 93, 4];
+ /* let numero = [3, 4, 6, 7, 8, 93, 4];
  let numero2= [];
 
 function doble (lista){
@@ -54,5 +54,34 @@ function doble (lista){
     return numero2;
 }
 
-console.log(doble(numero));
+console.log(doble(numero)); */
+
+
+// menor a 17
+let objeto = [{name: "erik", edad: "18", hobbies: ["jugar", "nadar"]},
+                {name: "juan", edad: "16", hobbies: ["jugar", "nadar"]},
+                {name: "maria", edad: "19", hobbies: ["jugar", "nadar"]},
+                {name: "eva", edad: "20", hobbies: ["jugar", "nadar"]},
+                {name: "junne", edad: "15", hobbies: ["jugar", "nadar"]},
+                {name: "cris", edad: "12", hobbies: ["jugar", "nadar"]},
+                {name: "tobbie", edad: "13", hobbies: ["jugar", "nadar"]},
+                {name: "john", edad: "17", hobbies: ["jugar", "nadar"]},
+                {name: "carlos", edad: "19", hobbies: ["jugar", "nadar"]},
+                {name: "tomas", edad: "18", hobbies: ["jugar", "nadar"]}];
+
+
+function menor(datos){
+    let nuevo= [];
+    for (x of datos){
+        if(x.edad > 17){
+            nuevo= [...nuevo, x];
+        }
+    }
+    return nuevo;
+}
+    
+console.log(menor(objeto));
+
+
+
 
