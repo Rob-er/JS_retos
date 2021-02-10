@@ -70,9 +70,9 @@ let objeto = [{name: "erik", edad: "18", hobbies: ["jugar", "nadar"]},
                 {name: "tomas", edad: "18", hobbies: ["jugar", "nadar"]}];
 
 
-function menor(datos){
+/* function menor(datos){
     let nuevo= [];
-    for (x of datos){
+    for (let x of datos){
         if(x.edad > 17){
             nuevo= [...nuevo, x];
         }
@@ -80,8 +80,41 @@ function menor(datos){
     return nuevo;
 }
     
-console.log(menor(objeto));
+console.log(menor(objeto)); */
+
+let numero = [3, 4, 6, 7, 8, 93, 4];
+
+/* const doble = numero.map((x, index)  => {
+    if (index % 2){
+        return x *2;
+    }
+}) */
+
+/* const doble = numero.filter((x, i) => {
+    if (i % 2 === 0){
+        return x*2;
+    }
+}) */
+
+const doble = numero.reduce((an, act) => {
+    return an + act
+}, [])
+
+console.log(doble);
 
 
 
+
+
+
+
+/* let otro = objeto.map(x => { 
+    let nue = [];
+    if (x.edad > 17){
+        nue.push(x);
+    }
+    return nue
+});
+
+console.log(otro); */
 
