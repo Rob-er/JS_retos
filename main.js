@@ -1,45 +1,34 @@
-/*let edad = 23;
-let edad_minima = 21;
-let ciudad =  prompt("Ciudad") //"CDMX"
 
-if (edad >= edad_minima && ciudad === "CDMX") {
-    console.log("si puede votar");
-} else{
-    console.log("No puede votar");
-}*/
+let alumnos = [
+    { nombre: 'Maria', calificaciones: [9,9,7,8,10] },
+    { nombre: 'Antonio', calificaciones: [9,8,7,8,10] },
+    { nombre: 'Juan', calificaciones: [9,9,7,8,2] },
+    { nombre: 'Luis', calificaciones: [9,9,7,8] },
+    { nombre: 'Ana', calificaciones: [9,9,7,8,10] },
+    { nombre: 'Maria', calificaciones: [9,9,8,10,10] },
+    { nombre: 'Pedro', calificaciones: [7,9,9,8,10] },
+    { nombre: 'Julio', calificaciones: [10,9,7,8,10] },
+];
 
-/*let nombre= prompt("nombre autor");
-  switch(nombre) {
-     case "Sartre":
-         console.log("La nausea, La bola de Cebo, El exitencialismo es humanismo");
-         break;
-     case "Vargas Llosa":
-         console.log("La Ciudad y los peros, las 4 esquinas");
-         break;
-     case "Garcia Marquez":
-         console.log("El coronel no tiene quien le escriba, 100 años de soledad");
-         break;
-     default: 
-     console.log("No esta el autor");
-     break;
- } */
+    
+console.log(
+    alumnos.reduce((pre, act) => {
+        if ((act.calificaciones.reduce((p,c) => p+c) / 5) > 8.5){
+            pre.push(act);
+        }
+        return pre
+    }, [])
+)
 
- /* let inicio = Number(prompt("Numero de inicio"));
- let fin = Number(prompt("Numero de Fin"));
- let residual= Number(prompt("Dividido entre"));
 
- for(inicio; inicio >= fin; inicio--){
-     if(inicio % residual === 0){
-         console.log(inicio);
-     }
- } */
 
- /* let inicio = Number(prompt("Numero"));
- while(inicio > 0){
-     if(inicio % 2 !== 0){
-         console.log(inicio);
-     }
-     inicio--
- }
- */
+
+
+    
+
+
+ /*  console.log(alumnos[0].calificaciones.reduce((pre,act) => {
+      let total = (pre + act);
+      let tamaño = alumnos[0].calificaciones.length
+      return (total) / tamaño})); */
 
