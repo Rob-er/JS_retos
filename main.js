@@ -1,45 +1,14 @@
-/*let edad = 23;
-let edad_minima = 21;
-let ciudad =  prompt("Ciudad") //"CDMX"
+// Ejercicio 1
+/* Desarrolle un algoritmo que permita leer dos valores distintos, determinar cual de los dos valores
+ es el mayor y escribirlo */
 
-if (edad >= edad_minima && ciudad === "CDMX") {
-    console.log("si puede votar");
-} else{
-    console.log("No puede votar");
-}*/
+function mayor (id1, id2){
+    const input1 = document.getElementById(id1);
+    const input2 = document.getElementById(id2);
 
-/*let nombre= prompt("nombre autor");
-  switch(nombre) {
-     case "Sartre":
-         console.log("La nausea, La bola de Cebo, El exitencialismo es humanismo");
-         break;
-     case "Vargas Llosa":
-         console.log("La Ciudad y los peros, las 4 esquinas");
-         break;
-     case "Garcia Marquez":
-         console.log("El coronel no tiene quien le escriba, 100 años de soledad");
-         break;
-     default: 
-     console.log("No esta el autor");
-     break;
- } */
+    const numero1 = Number(input1.value);
+    const numero2 = Number(input2.value);
 
- /* let inicio = Number(prompt("Numero de inicio"));
- let fin = Number(prompt("Numero de Fin"));
- let residual= Number(prompt("Dividido entre"));
-
- for(inicio; inicio >= fin; inicio--){
-     if(inicio % residual === 0){
-         console.log(inicio);
-     }
- } */
-
- /* let inicio = Number(prompt("Numero"));
- while(inicio > 0){
-     if(inicio % 2 !== 0){
-         console.log(inicio);
-     }
-     inicio--
- }
- */
+    console.log(`El valor mas grande es`, Math.max(numero1, numero2));
+}
 
