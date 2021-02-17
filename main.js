@@ -33,3 +33,39 @@ function mayor_menos(id1, id2, id3){
     }
 
 }
+
+// Ejercicio 3
+
+/* Desarrolle un algoritmo que realice la sumatoria de los números enteros comprendidos
+entre el 1 y el 10, es decir, 1 + 2 + 3 + …. + 10 */
+
+/* const numeros = [1,2,3,4,5,6,7,8,9,10];
+
+const suma = numeros.reduce((pre, act) => {
+    return pre + act
+})
+
+console.log(suma); */
+
+/* a) Desarrolle un algoritmo que realice la sumatoria de los números enteros múltiplos de 5,
+      comprendidos entre el 1 y el 100, es decir, 5 + 10 + 15 +…. + 100. 
+      El programa deberá imprimir los números en cuestión y finalmente su sumatoria  */
+
+const lista = [];
+
+function suma (){
+    for (let i = 1; i <= 100; i++){
+        if (i % 5 === 0){
+            lista.push(i);
+    }
+}
+    return lista;
+}   
+
+console.log(suma());
+
+
+
+
+
+
