@@ -51,21 +51,58 @@ console.log(suma); */
       comprendidos entre el 1 y el 100, es decir, 5 + 10 + 15 +…. + 100. 
       El programa deberá imprimir los números en cuestión y finalmente su sumatoria  */
 
-const lista = [];
+/* const lista = [];
 
 function suma (){
     for (let i = 1; i <= 100; i++){
-        if (i % 5 === 0){
+        if (i % 5 === 0) {
             lista.push(i);
-    }
+        }
 }
-    return lista;
+    console.log(lista);
+    return lista.reduce((pre,act) => {
+        return pre + act;
+    });
+
 }   
 
-console.log(suma());
+console.log(suma()); */
+
+// Ejercicio 4
+/* Determinar la hipotenusa de un triángulo rectángulo conocidas las longitudes de sus dos catetos.
+Desarrolle el algoritmo correspondiente*/
+
+/* 
+function hipotenusa(catetoA, catetoB){
+    return Math.sqrt(Math.pow(catetoA,2) + Math.pow(catetoB,2));
+}
+
+console.log(`la Hipotenusa es ${hipotenusa(2,4)}`); */
+
+// Ejercicio 6 
+/* Desarrolle un algoritmo que permita determinar el área y volumen de un cilindro dado su radio (R) y
+altura (H). */
+
+/* function cilindro(radio, altura){
+    const pi = Math.PI;
+    const area = 2*pi*radio*(radio+altura);
+    const volumen = pi*Math.pow(radio,2)*altura;
+    return console.log(`El área es ${area} y el volumen es ${volumen}`);
+}
+
+cilindro(5,20); */
+
+// Ejercicio 7
+/* Desarrolle un algoritmo que permita convertir calificaciones numéricas, según la siguiente tabla:
+ A = 19 y 20, B =16, 17 y 18, C = 13, 14 y 15, D = 10, 11 y 12, E = 1 hasta el 9. 
+ Se asume que la nota está comprendida entre 1 y 20 */
 
 
+function calificaciones (nota){
+   nota === 19 || 20 ? console.log("A") : nota === 16 || 17 || 18 ?  console.log("B") : nota === 13 || 14 || 15 ? console.log("C"): console.log("D");
+}
 
+calificaciones(14);
 
 
 
