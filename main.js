@@ -239,7 +239,7 @@ promNotas(2) */
 que le permita calcular e imprimir la nómina para su cancelación a un total de 50 obreros
 calificados a quienes debe cancelar por horas trabajadas. La hora trabajada se pautó en 30.000 Bolívares. */
  
-class Obrero {
+/* class Obrero {
     constructor (nombre, hrs_Trabajadas){
         this.nombre = nombre
         this.hrs_Trabajadas = hrs_Trabajadas
@@ -272,6 +272,85 @@ function nomina (){
     console.table(total.lista)
 }
 
-nomina()
+nomina() */
+
+// Ejercicio 14
+// Desarrolle un algoritmo que funcione como caja registradora, 
+
+/* function caja_registradora (codigo_prod, precio){
+    let lista = [];
+    let subtotal = 0
+    let IVA = .15
+    let iva = 0
+    let Total = 0
+    let pregunta
+        
+    do{
+        codigo_prod = prompt(`Cual es codigo del producto`);
+        precio = Number(prompt(`El precio del producto es...`));
+        if (codigo_prod !== "" && precio !== ""){
+
+            lista.push(codigo_prod, precio) 
+            subtotal += precio;
+            iva = subtotal * IVA
+            Total = iva + subtotal
+           
+
+            console.log(`Estos son los productos ${lista}`)
+            console.log(`El subtotal es: ${subtotal} el iva es; ${iva} el Total es: ${Total}`);
+
+             pregunta = prompt(`Desea agregar un producto? [s] [n]`);
+
+        } 
+    }
+    while(pregunta === "s")
+}
+
+
+caja_registradora(); */
+
+//Ejercicio 15 
+/* Desarrolle un algoritmo que permita determinar a partir de un número de días, ingresado por pantalla,
+  ¿Cuántos años, meses, semanas y días; constituyen el número de días proporcionado 
+  utilizando la estructura While. */
+
+/*  function añosaDSMA(dias){
+    dias = Number(prompt(`Cuántos dias desea calcuar?`));
+    let años  = 0;
+    let meses  = 0;
+    let semanas = 0;
+    let contador = 0;
+    while(contador <= 0){
+
+        if (dias > 7 && dias !== null){
+            semanas += (dias/7);
+            meses += (dias/30.417);
+            años += (dias/365);
+            dias % 365 === 0 ? Math.floor(meses) : ""
+            
+        } else {
+            console.log("Agregue un valor mayor a 7 o valido")
+        }
+        console.log(`${dias} equivale a ${semanas} semanas, ${meses} meses y ${años} años`)
+        
+        contador++
+    }
+ }
+
+añosaDSMA() */
+
+//Ejercicio 16 
+
+function printerError(s){
+    let abc = /[N-Z]/gi;
+    let res = (s).match(abc);
+    res === null ? stop() : 
+    console.log(res.length + "/" + s.length)
+
+}
+
+printerError("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmm")
+
+
 
 
