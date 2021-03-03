@@ -102,7 +102,7 @@ digPow(92, 1) should return -1 since there is no k such as 9¹ + 2² equals 92 *
 digPow(695, 2) should return 2 since 6² + 9³ + 5⁴= 1390 = 695 * 2
 digPow(46288, 3) should return 51 since 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51 */
 
-function digPow(n, p){
+/* function digPow(n, p){
   let part = String(n).match(/[0-9]/gi)
 
   let res = part.reduce((acc, el, index) => {
@@ -112,13 +112,111 @@ function digPow(n, p){
   return res % n === 0 ? res / n : -1
 }
 
-digPow(46288, 3)
+digPow(46288, 3) */
+
+// Solucion interesante de otro usario 
+
+/* i = 0
+function digPow(n, p){
+  return  [1,-1,51,9,-1,1,1,1,1,1,1,1,-1,-1,3,3,2,1,2,19,5,1,1,5,35,66,10,1,1,1,4,12933][i++]
+} */
+
+//Otro
+/* Check to see if a string has the same amount of 'x's and 'o's. 
+The method must return a boolean and be case insensitive. The string can contain any char.
+
+Examples input/output:
+
+XO("ooxx") => true
+XO("xooxx") => false
+XO("ooxXm") => true
+XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+XO("zzoo") => false */
 
 
+/* function XO(str) {
+
+  return str.match(/O/gi) !== null && str.match(/X/gi) !== null ?
+   (true, str.match(/O/gi).length === str.match(/X/gi).length)
+   : true ? str.match(/O/gi) === null && str.match(/X/gi) === null : true
+}
+
+XO("jjjm") */
 
 
+// Otro
+// Suma de los numeros impares positivos, empezando por la posicion n 
+
+/* function rowSumOddNumbers(n) {
+
+  let res = Math.pow(n, 3)
+  
+  console.log(res)
+}
+rowSumOddNumbers(42) */
+
+//Otro
+/* You get an array of numbers, return the sum of all of the positives ones.
+
+Example [1,-4,7,12] => 1 + 7 + 12 = 20
+
+Note: if there is nothing to sum, the sum is default to 0. */
 
 
+/* function positiveSum(arr) {
 
+  let res = arr.reduce((acc, el) => el > 0 ? acc += el : acc, 0)
+  console.log(res)
 
+}
+
+positiveSum([1,-4,7,12]) */
+
+//Otro 
+
+/* The first century spans from the year 1 up to and including the year 100,
+ The second - from the year 101 up to and including the year 200, etc.
+
+Task :
+Given a year, return the century it is in.
+
+Input , Output Examples ::
+centuryFromYear(1705)  returns (18)
+centuryFromYear(1900)  returns (19)
+centuryFromYear(1601)  returns (17)
+centuryFromYear(2000)  returns (20) */
+
+/* function century(year) {
+
+  // mi solucion 
+  
+ console.log(year % 100 === 0 ? year / 100 : Math.floor(year/100)+1)
+
+ // La mejor solucion
+
+ console.log(Math.ceil(year/100))
+}
+
+century(89)
+ */
+// Otro
+
+/* Your task is to make a function that can take any non-negative integer as
+ an argument and return it with its digits in descending order. Essentially,
+  rearrange the digits to create the highest possible number.
+
+Examples:
+Input: 42145 Output: 54421
+
+Input: 145263 Output: 654321
+
+Input: 123456789 Output: 987654321 */
+
+function descendingOrder(n){
+
+  let res = Number(String(n).match(/[0-9]/g).sort((a,b) => b-a).join(""))
+  console.log(res)
+
+}
+ descendingOrder(42145)
 
